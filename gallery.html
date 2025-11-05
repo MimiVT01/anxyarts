@@ -3,58 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anxy | Pricing</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Anxy | Art Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Commission Pricing</h1>
-    <p>Choose the style that fits your vision</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="pricing.html">Pricing</a>
+  <nav class="site-nav">
+    <div class="links">
+      <a href="index.html" class="nav-btn">Home</a>
+      <a href="#gallery" class="nav-btn">Gallery</a>
+      <a href="#contact" class="nav-btn">Contact</a>
+    </div>
   </nav>
 
-  <main>
-    <h2>Commission Types</h2>
-    <p>Below are my standard base prices. Additional charges may apply for complexity, backgrounds, or commercial use.</p>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-inner">
+      <h1>My Art Gallery</h1>
+      <p>All my creations in one place — updated regularly!</p>
+      <a href="index.html#contact" class="btn">Contact Me</a>
+    </div>
+  </header>
 
-    <table>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-        <th>Price (USD)</th>
-      </tr>
-      <tr>
-        <td>Profile Picture (PFP)</td>
-        <td>Headshot or bust-up portrait, detailed coloring</td>
-        <td>$40</td>
-      </tr>
-      <tr>
-        <td>Half Body</td>
-        <td>From head to waist, with dynamic pose and shading</td>
-        <td>$70</td>
-      </tr>
-      <tr>
-        <td>Full Body</td>
-        <td>Full character, detailed outfit and background option</td>
-        <td>$100+</td>
-      </tr>
-      <tr>
-        <td>Character Design</td>
-        <td>Custom design from description or references</td>
-        <td>$120+</td>
-      </tr>
-    </table>
+  <section id="gallery" class="section fade-section">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <img src="images/art1.jpg" alt="Artwork 1">
+      <img src="images/art2.jpg" alt="Artwork 2">
+      <img src="images/art3.jpg" alt="Artwork 3">
+      <img src="images/art4.jpg" alt="Artwork 4">
+      <img src="images/art5.jpg" alt="Artwork 5">
+      <img src="images/art6.jpg" alt="Artwork 6">
+      <!-- Add more images here as you upload -->
+    </div>
+  </section>
 
-    <p>For commission requests, please reach out at <a href="mailto:anxy.art@example.com">anxy.art@example.com</a>.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Anxy | All Rights Reserved</p>
+  <footer class="site-footer">
+    <p>&copy; 2025 Anxy | Crafted with ❤️ & creativity</p>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
+  </script>
+
 </body>
 </html>
