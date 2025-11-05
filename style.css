@@ -1,66 +1,76 @@
-/* === Global Styles for Anxy's Website === */
-
+/* === Base === */
+html {
+  scroll-behavior: smooth;
+}
 body {
-  font-family: "Poppins", Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background-color: #FFE6D4;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #FFE6D4;
   color: #333;
+  overflow-x: hidden;
 }
 
-/* === Header === */
-header {
-  background-color: #E06B80;
-  color: white;
-  text-align: center;
-  padding: 1.5rem 0;
+/* === Navigation === */
+.site-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 230, 212, 0.9);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
 }
-
-/* === Navigation Bar === */
-nav {
-  background-color: #FFC69D;
-  text-align: center;
-  padding: 0.75rem;
-}
-
-nav a {
+.site-nav a {
   color: #CD2C58;
-  margin: 0 20px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
   transition: color 0.3s ease;
 }
-
-nav a:hover {
+.site-nav a:hover {
   color: #E06B80;
 }
 
-/* === Main Content === */
-main {
-  padding: 3rem 10%;
+/* === Hero === */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  background: linear-gradient(135deg, #CD2C58, #E06B80, #FFC69D);
+  color: #fff;
+}
+.hero-inner h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin: 0;
+}
+.hero-inner p {
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+  opacity: 0.9;
 }
 
-/* Headings */
-h1, h2, h3 {
+/* === Sections === */
+.section {
+  padding: 6rem 10%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.section h2 {
   color: #CD2C58;
-}
-
-/* === About / Contact Section === */
-.about {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.contact {
-  margin-top: 2rem;
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  display: inline-block;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
 }
 
 /* === Gallery === */
@@ -70,62 +80,87 @@ h1, h2, h3 {
   gap: 1.5rem;
   margin-top: 2rem;
 }
-
 .gallery img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
 }
-
 .gallery img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  filter: brightness(1.05);
 }
 
-/* === Pricing Table === */
+/* === Pricing === */
 table {
+  margin: 2rem auto;
   width: 100%;
   max-width: 700px;
-  margin: 2rem auto;
   border-collapse: collapse;
   background: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
-
 th, td {
-  padding: 1rem;
+  padding: 1.2rem;
   border-bottom: 1px solid #FFE6D4;
 }
-
 th {
-  background-color: #E06B80;
+  background: #E06B80;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-
 tr:hover {
-  background-color: #FFF2E7;
+  background: #FFF2E7;
 }
 
 /* === Footer === */
-footer {
-  background-color: #FFC69D;
+.site-footer {
+  background: #FFC69D;
   color: #CD2C58;
   text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: 2rem 0;
+  font-weight: bold;
 }
 
-/* === Links === */
-a {
-  color: #CD2C58;
+/* === Fade-in animations for hero text === */
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1.2s forwards;
+}
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeInUp 1.5s forwards;
+  animation-delay: 0.3s;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-a:hover {
-  color: #E06B80;
+/* === Responsive === */
+@media (max-width: 768px) {
+  .hero-inner h1 {
+    font-size: 2.5rem;
+  }
+  .hero-inner p {
+    font-size: 1rem;
+  }
+  .section {
+    padding: 4rem 6%;
+  }
+  .site-nav {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
 }
