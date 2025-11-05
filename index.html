@@ -4,29 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anxy | Digital Artist</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <nav class="site-nav">
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
+    <div class="logo">Anxy</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
       <h1 class="fade-in">Anxy</h1>
-      <p class="fade-in-delay">Digital Artist · Character Design · Illustrations</p>
+      <p class="fade-in-delay">Digital Artist | Character Design & Illustration</p>
+      <a href="#portfolio" class="btn fade-in-delay2">View My Work</a>
     </div>
   </header>
 
   <section id="about" class="section fade-section">
     <h2>About Me</h2>
-    <p>Hi! I’m <strong>Anxy</strong>, a digital artist specializing in character art, profile pictures, and full-body illustrations. My style blends expressive color palettes with clean linework to bring characters and concepts to life. Whether it’s commissions or personal projects, I aim to capture emotion and personality in every piece.</p>
+    <p>
+      I’m <strong>Anxy</strong>, a digital artist passionate about bringing characters to life
+      through expressive design, color harmony, and storytelling. My art focuses on
+      personality, emotion, and atmosphere — blending stylized composition with modern
+      digital techniques.
+    </p>
+    <p>
+      Whether you’re looking for a portrait, character concept, or custom illustration,
+      I create each piece with care and individuality.
+    </p>
   </section>
 
-  <section id="portfolio" class="section fade-section">
+  <section id="portfolio" class="section alt-section fade-section">
     <h2>Portfolio</h2>
     <div class="gallery">
       <img src="images/art1.jpg" alt="Artwork 1">
@@ -40,18 +53,22 @@
 
   <section id="pricing" class="section fade-section">
     <h2>Pricing</h2>
-    <p>Below are my standard base prices. Additional charges may apply for complexity, backgrounds, or commercial use.</p>
+    <p>
+      Here are my standard rates for commissions. Prices may vary based on complexity,
+      background detail, and commercial rights.
+    </p>
     <table>
       <tr><th>Type</th><th>Description</th><th>Price (USD)</th></tr>
-      <tr><td>Profile Picture (PFP)</td><td>Headshot or bust-up portrait, detailed coloring</td><td>$40</td></tr>
-      <tr><td>Half Body</td><td>From head to waist, with dynamic pose and shading</td><td>$70</td></tr>
-      <tr><td>Full Body</td><td>Full character, detailed outfit and background option</td><td>$100+</td></tr>
-      <tr><td>Character Design</td><td>Custom design from description or references</td><td>$120+</td></tr>
+      <tr><td>Profile Picture (PFP)</td><td>Bust-up with full color and expression</td><td>$40</td></tr>
+      <tr><td>Half Body</td><td>Waist-up, detailed shading and background optional</td><td>$70</td></tr>
+      <tr><td>Full Body</td><td>Full character illustration with dynamic pose</td><td>$100+</td></tr>
+      <tr><td>Character Design</td><td>Custom concept with outfit and expression sheet</td><td>$120+</td></tr>
     </table>
   </section>
 
-  <section id="contact" class="section fade-section">
+  <section id="contact" class="section alt-section fade-section">
     <h2>Contact Me</h2>
+    <p>Interested in a commission or collaboration? Reach out below:</p>
     <p>Email: <a href="mailto:anxy.art@example.com">anxy.art@example.com</a></p>
     <p>Instagram: <a href="https://instagram.com/anxyart" target="_blank">@anxyart</a></p>
     <p>Twitter/X: <a href="https://x.com/anxyart" target="_blank">@anxyart</a></p>
@@ -61,19 +78,16 @@
     <p>&copy; 2025 Anxy | All Rights Reserved</p>
   </footer>
 
+  <a href="#contact" class="float-btn">Commission Me</a>
+
   <script>
     // Scroll reveal animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.15 });
-
-    document.querySelectorAll('.fade-section').forEach(section => {
-      observer.observe(section);
-    });
+    document.querySelectorAll('.fade-section').forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
