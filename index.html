@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anxy | Digital Artist</title>
+  <title>Anxy | Digital Artist & Illustrator</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <nav class="site-nav">
@@ -18,25 +19,39 @@
   </nav>
 
   <header class="hero">
+    <div class="overlay"></div>
     <div class="hero-inner">
       <h1 class="fade-in">Anxy</h1>
-      <p class="fade-in-delay">Digital Artist | Character Design & Illustration</p>
-      <a href="#portfolio" class="btn fade-in-delay2">View My Work</a>
+      <p class="fade-in-delay">Digital Artist & Character Illustrator</p>
+      <a href="#portfolio" class="btn fade-in-delay2">Explore My Art</a>
     </div>
   </header>
 
   <section id="about" class="section fade-section">
     <h2>About Me</h2>
     <p>
-      I’m <strong>Anxy</strong>, a digital artist passionate about bringing characters to life
-      through expressive design, color harmony, and storytelling. My art focuses on
-      personality, emotion, and atmosphere — blending stylized composition with modern
-      digital techniques.
+      Hi, I’m <strong>Anxy</strong> — a digital artist specializing in stylized portraits, character art, and narrative illustration.
+      I create pieces that express emotion through color, light, and movement.
     </p>
     <p>
-      Whether you’re looking for a portrait, character concept, or custom illustration,
-      I create each piece with care and individuality.
+      My work blends storytelling with modern digital aesthetics, drawing inspiration from animation, fashion, and dreams.
+      Every commission is a collaboration built around your vision.
     </p>
+  </section>
+
+  <section id="highlights" class="highlight-section fade-section">
+    <div class="highlight">
+      <h3>✨ 150+ Commissions</h3>
+      <p>Trusted by clients across the globe</p>
+    </div>
+    <div class="highlight">
+      <h3>🎨 4+ Years Experience</h3>
+      <p>Mastering digital color & form</p>
+    </div>
+    <div class="highlight">
+      <h3>💌 Custom Commissions</h3>
+      <p>Every piece crafted uniquely for you</p>
+    </div>
   </section>
 
   <section id="portfolio" class="section alt-section fade-section">
@@ -53,35 +68,33 @@
 
   <section id="pricing" class="section fade-section">
     <h2>Pricing</h2>
-    <p>
-      Here are my standard rates for commissions. Prices may vary based on complexity,
-      background detail, and commercial rights.
-    </p>
+    <p>Standard commission rates — detailed, transparent, and fair.</p>
     <table>
       <tr><th>Type</th><th>Description</th><th>Price (USD)</th></tr>
-      <tr><td>Profile Picture (PFP)</td><td>Bust-up with full color and expression</td><td>$40</td></tr>
-      <tr><td>Half Body</td><td>Waist-up, detailed shading and background optional</td><td>$70</td></tr>
-      <tr><td>Full Body</td><td>Full character illustration with dynamic pose</td><td>$100+</td></tr>
-      <tr><td>Character Design</td><td>Custom concept with outfit and expression sheet</td><td>$120+</td></tr>
+      <tr><td>Profile Picture (PFP)</td><td>Bust-up portrait, full render</td><td>$40</td></tr>
+      <tr><td>Half Body</td><td>Waist-up, detailed character</td><td>$70</td></tr>
+      <tr><td>Full Body</td><td>Complete figure, dynamic pose</td><td>$100+</td></tr>
+      <tr><td>Character Design</td><td>Original design concept or ref sheet</td><td>$120+</td></tr>
     </table>
   </section>
 
   <section id="contact" class="section alt-section fade-section">
     <h2>Contact Me</h2>
-    <p>Interested in a commission or collaboration? Reach out below:</p>
-    <p>Email: <a href="mailto:anxy.art@example.com">anxy.art@example.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/anxyart" target="_blank">@anxyart</a></p>
-    <p>Twitter/X: <a href="https://x.com/anxyart" target="_blank">@anxyart</a></p>
+    <p>For commissions or collaborations:</p>
+    <div class="contact-links">
+      <a href="mailto:anxy.art@example.com">✉️ Email Me</a>
+      <a href="https://instagram.com/anxyart" target="_blank">📸 Instagram</a>
+      <a href="https://x.com/anxyart" target="_blank">🐦 Twitter/X</a>
+    </div>
   </section>
 
   <footer class="site-footer">
-    <p>&copy; 2025 Anxy | All Rights Reserved</p>
+    <p>&copy; 2025 Anxy | Crafted with ❤️ & creativity</p>
   </footer>
 
   <a href="#contact" class="float-btn">Commission Me</a>
 
   <script>
-    // Scroll reveal animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
