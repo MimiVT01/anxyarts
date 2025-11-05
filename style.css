@@ -30,9 +30,9 @@ body {
 
 .links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center all buttons horizontally */
   gap: 1.5rem;
-  width: 60%;
+  width: auto; /* Remove the fixed 60% width */
 }
 
 .nav-btn {
