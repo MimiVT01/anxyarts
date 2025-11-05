@@ -30,9 +30,12 @@ body {
 
 .links {
   display: flex;
-  justify-content: center; /* Center all buttons horizontally */
+  justify-content: center; 
   gap: 1.5rem;
-  width: auto; /* Remove the fixed 60% width */
+  max-width: 900px;      /* limit width on larger screens */
+  width: 100%;
+  padding: 0 2rem;       /* some padding on edges */
+  box-sizing: border-box;
 }
 
 .nav-btn {
@@ -41,9 +44,10 @@ body {
   background: #FFE6D4;
   color: #CD2C58;
   font-weight: 600;
-  transition: all 0.3s ease;
   text-decoration: none;
   text-align: center;
+  min-width: 120px;      /* prevents shrinking */
+  transition: all 0.3s ease;
 }
 .nav-btn:hover {
   background: #CD2C58;
@@ -234,8 +238,12 @@ tr:nth-child(even) {
 }
 
 /* === Media Queries === */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .highlight-section { flex-direction: column; padding: 4rem 5%; }
   .links { width: 90%; gap: 1rem; }
+  .hero h1 { font-size: 3.5rem; }
+}
+
+@media screen and (max-width: 768px) {
   .hero h1 { font-size: 3rem; }
 }
