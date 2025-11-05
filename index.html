@@ -7,33 +7,73 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Anxy’s Art World</h1>
-    <p>Digital Artist | Character Design | Illustrations</p>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="pricing.html">Pricing</a>
+  <nav class="site-nav">
+    <a href="#about">About</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <main>
-    <section class="about">
-      <h2>About Me</h2>
-      <p>Hi! I’m <strong>Anxy</strong>, a digital artist who specializes in character art, profile pictures, and full-body illustrations. My style blends expressive color palettes with clean linework to bring characters and concepts to life. Whether it’s commissions or personal projects, I aim to capture emotion and personality in every piece.</p>
-    </section>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="fade-in">Anxy</h1>
+      <p class="fade-in-delay">Digital Artist · Character Design · Illustrations</p>
+    </div>
+  </header>
 
-    <section class="contact">
-      <h3>Contact Me</h3>
-      <p>Email: <a href="mailto:anxy.art@example.com">anxy.art@example.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/anxyart" target="_blank">@anxyart</a></p>
-      <p>Twitter/X: <a href="https://x.com/anxyart" target="_blank">@anxyart</a></p>
-    </section>
-  </main>
+  <section id="about" class="section fade-section">
+    <h2>About Me</h2>
+    <p>Hi! I’m <strong>Anxy</strong>, a digital artist specializing in character art, profile pictures, and full-body illustrations. My style blends expressive color palettes with clean linework to bring characters and concepts to life. Whether it’s commissions or personal projects, I aim to capture emotion and personality in every piece.</p>
+  </section>
 
-  <footer>
+  <section id="portfolio" class="section fade-section">
+    <h2>Portfolio</h2>
+    <div class="gallery">
+      <img src="images/art1.jpg" alt="Artwork 1">
+      <img src="images/art2.jpg" alt="Artwork 2">
+      <img src="images/art3.jpg" alt="Artwork 3">
+      <img src="images/art4.jpg" alt="Artwork 4">
+      <img src="images/art5.jpg" alt="Artwork 5">
+      <img src="images/art6.jpg" alt="Artwork 6">
+    </div>
+  </section>
+
+  <section id="pricing" class="section fade-section">
+    <h2>Pricing</h2>
+    <p>Below are my standard base prices. Additional charges may apply for complexity, backgrounds, or commercial use.</p>
+    <table>
+      <tr><th>Type</th><th>Description</th><th>Price (USD)</th></tr>
+      <tr><td>Profile Picture (PFP)</td><td>Headshot or bust-up portrait, detailed coloring</td><td>$40</td></tr>
+      <tr><td>Half Body</td><td>From head to waist, with dynamic pose and shading</td><td>$70</td></tr>
+      <tr><td>Full Body</td><td>Full character, detailed outfit and background option</td><td>$100+</td></tr>
+      <tr><td>Character Design</td><td>Custom design from description or references</td><td>$120+</td></tr>
+    </table>
+  </section>
+
+  <section id="contact" class="section fade-section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:anxy.art@example.com">anxy.art@example.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/anxyart" target="_blank">@anxyart</a></p>
+    <p>Twitter/X: <a href="https://x.com/anxyart" target="_blank">@anxyart</a></p>
+  </section>
+
+  <footer class="site-footer">
     <p>&copy; 2025 Anxy | All Rights Reserved</p>
   </footer>
+
+  <script>
+    // Scroll reveal animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fade-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
