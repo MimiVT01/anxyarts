@@ -64,9 +64,11 @@ body {
   align-items: center;
   text-align: center;
   color: white;
-  overflow: hidden;
+  overflow: visible; /* 👈 allow content to extend beyond hero */
   background: radial-gradient(circle at 30% 30%, #FFC69D, #E06B80 70%, #CD2C58);
+  z-index: 5; /* 👈 ensures it sits above following sections */
 }
+
 .hero .overlay {
   position: absolute;
   inset: 0;
@@ -251,13 +253,36 @@ tr:nth-child(even) {
 /* === Hero Corner Image === */
 .hero-corner-img {
   position: absolute;
-  bottom: -150px;       /* moves image slightly below the hero */
-  left: 40px;          /* adjust horizontally so the pin aligns */
-  width: 280px;        /* tweak size if needed */
+  bottom: -340px;
+  left: 40px;
+  width: 280px;
   height: auto;
   opacity: 1;
-  z-index: 3;          /* above overlay and hero background */
+  z-index: 6; /* 👈 above overlay and hero background */
   pointer-events: none;
   user-select: none;
 }
 
+.leftside-img {
+  position: absolute;
+  left: -135px;
+  width: 400px;
+  height: auto;
+  opacity: 1;
+  z-index: 5; /* 👈 above overlay and hero background */
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(90deg) scaleX(1.965); /* horizontal flip */
+}
+
+.rightside-img {
+  position: absolute;
+  right: -135px;
+  width: 400px;
+  height: auto;
+  opacity: 1;
+  z-index: 5; /* 👈 above overlay and hero background */
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(90deg) scaleX(1.965) scaleY(-1); /* horizontal flip */
+}
