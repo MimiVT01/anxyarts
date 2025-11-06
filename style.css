@@ -251,12 +251,13 @@ tr:nth-child(even) {
 /* === Hero Corner Image === */
 .hero-corner-img {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 250px;
+  bottom: -20px;       /* moves image slightly below the hero */
+  left: 40px;          /* adjust horizontally so the pin aligns */
+  width: 280px;        /* tweak size if needed */
   height: auto;
-  opacity: 0.8;
-  z-index: 1;
+  opacity: 1;
+  z-index: 3;          /* above overlay and hero background */
   pointer-events: none;
   user-select: none;
 }
+
