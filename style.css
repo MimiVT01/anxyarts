@@ -251,7 +251,7 @@ tr:nth-child(even) {
 /* === Hero Corner Image === */
 .hero-corner-img {
   position: absolute;
-  bottom: -20px;       /* moves image slightly below the hero */
+  bottom: -150px;       /* moves image slightly below the hero */
   left: 40px;          /* adjust horizontally so the pin aligns */
   width: 280px;        /* tweak size if needed */
   height: auto;
