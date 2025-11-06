@@ -208,6 +208,7 @@ tr:nth-child(even) {
   background: #FFC69D;
   color: #CD2C58;
   font-weight: 500;
+  a { color:#CD2C58}
 }
 
 /* === Floating Button === */
