@@ -40,7 +40,7 @@ fetch("images/list.json")
 
     files.forEach(file => {
       const img = document.createElement("img");
-      img.src = "images/" + file;
+      img.src = file;
       img.loading = "lazy";
       gallery.appendChild(img);
     });
