@@ -33,7 +33,7 @@
 
 <script>
 // Load list.json and display images automatically
-fetch("images/list.json")
+fetch("images/list.json?cachebuster=" + Date.now())
   .then(res => res.json())
   .then(files => {
     const gallery = document.getElementById("gallery-container");
