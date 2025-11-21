@@ -1,1 +1,32 @@
+name: Update image list
+
+on:
+  push:
+    paths:
+      - "images/**"    # Trigger only when files in /images change
+  workflow_dispatch:   # Allow manual run
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Generate list.json
+      run: |
+        echo "[" > images/list.json
+        find images -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" -o -iname "*.gif" \) \
+        | sed 's/^/  "/; s/$/",/' >> images/list.json
+        sed -i '$ s/,$//' images/list.json   # remove last comma
+        echo "]" >> images/list.json
+
+    - name: Commit updated list.json
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add images/list.json
+        git commit -m "Auto-update list.json" || echo "No changes"
+        git push
 
