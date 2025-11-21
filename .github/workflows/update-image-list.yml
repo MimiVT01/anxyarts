@@ -3,8 +3,15 @@ name: Update image list
 on:
   push:
     paths:
-      - "images/**"    # Trigger only when files in /images change
-  workflow_dispatch:   # Allow manual run
+      - "images/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "update-image-list"
+  cancel-in-progress: true   # prevents job spam & cancellations
 
 jobs:
   build:
@@ -19,7 +26,7 @@ jobs:
         echo "[" > images/list.json
         find images -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" -o -iname "*.gif" \) \
         | sed 's/^/  "/; s/$/",/' >> images/list.json
-        sed -i '$ s/,$//' images/list.json   # remove last comma
+        sed -i '$ s/,$//' images/list.json
         echo "]" >> images/list.json
 
     - name: Commit updated list.json
