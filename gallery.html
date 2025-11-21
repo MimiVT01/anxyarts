@@ -40,8 +40,15 @@ fetch("images/list.json")
 
     files.forEach(file => {
       const img = document.createElement("img");
+
+      // JSON already contains "images/...":
       img.src = file;
+
       img.loading = "lazy";
+
+      // Remove broken/missing images so no boxes appear
+      img.onerror = () => img.remove();
+
       gallery.appendChild(img);
     });
   })
